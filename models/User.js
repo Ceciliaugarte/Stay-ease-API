@@ -21,6 +21,10 @@ class User extends Model {
         password: {
           type: DataTypes.STRING,
         },
+        role: {
+          type: DataTypes.ENUM("guest", "host", "administrator"),
+          defaultValue: "guest",
+        },
       },
       {
         sequelize,
