@@ -9,14 +9,14 @@ class Property extends Model {
           primaryKey: true,
           autoIncrement: true,
         },
-        title: {
+        name: {
           type: DataTypes.STRING,
         },
         description: {
           type: DataTypes.TEXT,
         },
         propertyType: {
-          type: DataTypes.STRING,
+          type: DataTypes.ENUM("house", "apartment", "guesthouse", "hotel"),
         },
         capacity: {
           type: DataTypes.INTEGER,
@@ -24,11 +24,28 @@ class Property extends Model {
         pricePerNight: {
           type: DataTypes.FLOAT,
         },
+        country: {
+          type: DataTypes.STRING,
+        },
         address: {
           type: DataTypes.STRING,
         },
         phone: {
           type: DataTypes.STRING,
+        },
+        rating: {
+          type: DataTypes.INTEGER,
+          validate: {
+            min: 1,
+            max: 10,
+          },
+        },
+        availableDate: {
+          type: DataTypes.DATE,
+        },
+        amenities: {
+          type: DataTypes.JSON,
+          allowNull: false,
         },
       },
       {
