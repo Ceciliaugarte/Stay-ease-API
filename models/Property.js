@@ -40,7 +40,10 @@ class Property extends Model {
             max: 10,
           },
         },
-        availableDate: {
+        availableDateFrom: {
+          type: DataTypes.DATE,
+        },
+        availableDateTo: {
           type: DataTypes.DATE,
         },
         amenities: {

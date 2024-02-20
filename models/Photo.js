@@ -10,7 +10,7 @@ class Photo extends Model {
           autoIncrement: true,
         },
         url: {
-          type: DataTypes.STRING,
+          type: DataTypes.TEXT,
         },
       },
       {

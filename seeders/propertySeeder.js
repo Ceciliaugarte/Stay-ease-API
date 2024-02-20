@@ -14,7 +14,8 @@ module.exports = async () => {
         phone: "+598 12345678",
         country: "Uruguay",
         rating: 9,
-        availableDate: "2024-09-01 to 2024-09-15",
+        availableDateFrom: new Date("2024-09-01"),
+        availableDateTo: new Date("2024-09-15"),
         amenities: {
           beds: 6,
           bathrooms: 2,
@@ -34,7 +35,8 @@ module.exports = async () => {
         phone: "+56 298765432",
         country: "Chile",
         rating: 10,
-        availableDate: "2024-10-01 to 2024-10-15",
+        availableDateFrom: new Date("2024-10-01"),
+        availableDateTo: new Date("2024-10-15"),
         amenities: {
           beds: 1,
           bathrooms: 1,
@@ -54,7 +56,8 @@ module.exports = async () => {
         phone: "+1 3105550123",
         country: "USA",
         rating: 9,
-        availableDate: "2024-08-01 to 2024-08-15",
+        availableDateFrom: new Date("2024-08-01"),
+        availableDateTo: new Date("2024-08-15"),
         amenities: {
           beds: 4,
           bathrooms: 4,
@@ -74,7 +77,8 @@ module.exports = async () => {
         phone: "+44 2012345678",
         country: "UK",
         rating: 8,
-        availableDate: "2024-09-01 to 2024-09-15",
+        availableDateFrom: new Date("2024-09-01"),
+        availableDateTo: new Date("2024-09-15"),
         amenities: {
           beds: 2,
           bathrooms: 2,
@@ -94,7 +98,8 @@ module.exports = async () => {
         phone: "+33 123456789",
         country: "France",
         rating: 9,
-        availableDate: "2024-10-01 to 2024-10-15",
+        availableDateFrom: new Date("2024-10-01"),
+        availableDateTo: new Date("2024-10-15"),
         amenities: {
           beds: 4,
           bathrooms: 2,
@@ -114,7 +119,8 @@ module.exports = async () => {
         phone: "+49 3012345678",
         country: "Germany",
         rating: 8,
-        availableDate: "2024-11-01 to 2024-11-15",
+        availableDateFrom: new Date("2024-11-01"),
+        availableDateTo: new Date("2024-11-15"),
         amenities: {
           beds: 1,
           bathrooms: 1,
@@ -134,7 +140,8 @@ module.exports = async () => {
         phone: "+61 212345678",
         country: "Australia",
         rating: 9,
-        availableDate: "2024-12-01 to 2024-12-15",
+        availableDateFrom: new Date("2024-12-01"),
+        availableDateTo: new Date("2024-12-15"),
         amenities: {
           beds: 3,
           bathrooms: 2,
@@ -154,7 +161,8 @@ module.exports = async () => {
         phone: "+1 6041234567",
         country: "Canada",
         rating: 8,
-        availableDate: "2025-01-01 to 2025-01-15",
+        availableDateFrom: new Date("2025-01-01"),
+        availableDateTo: new Date("2025-01-15"),
         amenities: {
           beds: 4,
           bathrooms: 3,
@@ -174,7 +182,8 @@ module.exports = async () => {
         phone: "+81 312345678",
         country: "Japan",
         rating: 9,
-        availableDate: "2025-04-01 to 2025-04-15",
+        availableDateFrom: new Date("2025-04-01"),
+        availableDateTo: new Date("2025-04-15"),
         amenities: {
           beds: 4,
           bathrooms: 2,
@@ -194,7 +203,8 @@ module.exports = async () => {
         phone: "+1 2061234567",
         country: "USA",
         rating: 8,
-        availableDate: "2025-05-01 to 2025-05-15",
+        availableDateFrom: new Date("2025-05-01"),
+        availableDateTo: new Date("2025-05-15"),
         amenities: {
           beds: 1,
           bathrooms: 1,
@@ -214,7 +224,8 @@ module.exports = async () => {
         phone: "+1 2121234567",
         country: "USA",
         rating: 9,
-        availableDate: "2025-08-01 to 2025-08-15",
+        availableDateFrom: new Date("2025-08-01"),
+        availableDateTo: new Date("2025-08-15"),
         amenities: {
           beds: 2,
           bathrooms: 2,
@@ -234,7 +245,8 @@ module.exports = async () => {
         phone: "+33 123456789",
         country: "France",
         rating: 9,
-        availableDate: "2025-09-01 to 2025-09-15",
+        availableDateFrom: new Date("2025-09-01"),
+        availableDateTo: new Date("2025-09-15"),
         amenities: {
           beds: 6,
           bathrooms: 4,
@@ -254,7 +266,8 @@ module.exports = async () => {
         phone: "+1 3051234567",
         country: "USA",
         rating: 9,
-        availableDate: "2026-07-01 to 2026-07-15",
+        availableDateFrom: new Date("2026-07-01"),
+        availableDateTo: new Date("2026-07-15"),
         amenities: {
           beds: 4,
           bathrooms: 3,
@@ -274,7 +287,8 @@ module.exports = async () => {
         phone: "+44 2012345678",
         country: "UK",
         rating: 8,
-        availableDate: "2026-08-01 to 2026-08-15",
+        availableDateFrom: new Date("2026-08-01"),
+        availableDateTo: new Date("2026-08-15"),
         amenities: {
           beds: 1,
           bathrooms: 1,
@@ -294,7 +308,8 @@ module.exports = async () => {
         phone: "+33 123456789",
         country: "France",
         rating: 9,
-        availableDate: "2026-09-01 to 2026-09-15",
+        availableDateFrom: new Date("2026-09-01"),
+        availableDateTo: new Date("2026-09-15"),
         amenities: {
           beds: 3,
           bathrooms: 2,
@@ -314,7 +329,8 @@ module.exports = async () => {
         phone: "+61 212345678",
         country: "Australia",
         rating: 10,
-        availableDate: "2026-10-01 to 2026-10-15",
+        availableDateFrom: new Date("2026-10-01"),
+        availableDateTo: new Date("2026-10-15"),
         amenities: {
           beds: 2,
           bathrooms: 2,
