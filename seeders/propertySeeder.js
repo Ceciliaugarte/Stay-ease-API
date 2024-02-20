@@ -256,7 +256,7 @@ module.exports = async () => {
         rating: 9,
         availableDate: "2026-07-01 to 2026-07-15",
         amenities: {
-          beds: 6,
+          beds: 4,
           bathrooms: 3,
           parking: true,
           breakfast: false,
