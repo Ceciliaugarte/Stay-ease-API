@@ -24,9 +24,22 @@ async function store(req, res) {
   return res.json(newReservation);
 }
 
-async function update(req, res) {}
+async function update(req, res) {
+  const reservationId = req.params.id;
+  const { checkInDate, checkOutDate, status, totalPrice, propertyId, userId } = req.body;
 
-async function destroy(req, res) {}
+  await Reservation.update(
+    { checkInDate, checkOutDate, status, totalPrice, propertyId, userId },
+    { where: { id: reservationId } },
+  );
+  return res.json("Reservation has been updated");
+}
+
+async function destroy(req, res) {
+  const reservationId = req.params.id;
+  await Reservation.destroy({ where: { id: reservationId } });
+  return res.json("Reservation has been deleted");
+}
 
 module.exports = {
   index,

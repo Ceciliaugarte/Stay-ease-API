@@ -1,4 +1,3 @@
-const { where } = require("sequelize");
 const { User } = require("../models");
 const bcrypt = require("bcryptjs");
 
@@ -38,13 +37,13 @@ async function update(req, res) {
     },
     { where: { id: userId } },
   );
-  return res.send("User was updated");
+  return res.json("User has been updated");
 }
 
 async function destroy(req, res) {
   const userId = req.params.id;
   await User.destroy({ where: { id: userId } });
-  return res.send("User was deleted");
+  return res.json("User has been deleted");
 }
 
 module.exports = {

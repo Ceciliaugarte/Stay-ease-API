@@ -79,7 +79,7 @@ async function update(req, res) {
 
     { where: { id: propertyId } },
   );
-  return res.send("Property has been updated");
+  return res.json("Property has been updated");
 }
 
 async function destroy(req, res) {
