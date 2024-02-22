@@ -10,7 +10,7 @@ module.exports = (app) => {
   app.use("/users", userRoutes);
   app.use("/properties", propertyRoutes);
   app.use("/reservations", reservationRoutes);
-  app.use("/comment", commentRoutes);
+  app.use("/comments", commentRoutes);
   app.use("/photo", photoRoutes);
   app.use("/", publicRoutes);
   app.use(errorHandler);
