@@ -1,25 +1,97 @@
+const { Property } = require("../models");
+
 async function index(req, res) {
-  return res.send("WELCOME TO HOME");
+  const properties = await Property.findAll();
+  return res.json(properties);
 }
 
-async function show(req, res) {}
+async function show(req, res) {
+  const propertyId = req.params.id;
+  const property = await Property.findByPk(propertyId);
+  return res.json(property);
+}
 
-async function create(req, res) {}
+async function store(req, res) {
+  const {
+    name,
+    description,
+    propertyType,
+    capacity,
+    pricePerNight,
+    address,
+    phone,
+    country,
+    rating,
+    availableDateFrom,
+    availableDateTo,
+    amenities,
+  } = req.body;
 
-async function store(req, res) {}
+  const newProperty = await Property.create({
+    name,
+    description,
+    propertyType,
+    capacity,
+    pricePerNight,
+    address,
+    phone,
+    country,
+    rating,
+    availableDateFrom,
+    availableDateTo,
+    amenities,
+  });
+  return res.json(newProperty);
+}
 
-async function edit(req, res) {}
+async function update(req, res) {
+  const propertyId = req.params.id;
+  const {
+    name,
+    description,
+    propertyType,
+    capacity,
+    pricePerNight,
+    address,
+    phone,
+    country,
+    rating,
+    availableDateFrom,
+    availableDateTo,
+    amenities,
+  } = req.body;
 
-async function update(req, res) {}
+  await Property.update(
+    {
+      name,
+      description,
+      propertyType,
+      capacity,
+      pricePerNight,
+      address,
+      phone,
+      country,
+      rating,
+      availableDateFrom,
+      availableDateTo,
+      amenities,
+    },
 
-async function destroy(req, res) {}
+    { where: { id: propertyId } },
+  );
+  return res.send("Property has been updated");
+}
+
+async function destroy(req, res) {
+  const propertyId = req.params.id;
+  await Property.destroy({ where: { id: propertyId } });
+  return res.json("Property has been deleted");
+}
 
 module.exports = {
   index,
   show,
-  create,
   store,
-  edit,
   update,
   destroy,
 };

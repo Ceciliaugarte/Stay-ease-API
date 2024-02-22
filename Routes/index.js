@@ -4,12 +4,14 @@ const propertyRoutes = require("./propertyRoutes");
 const reservationRoutes = require("./reservationRoutes");
 const commentRoutes = require("./commentRoutes");
 const photoRoutes = require("./photoRoutes");
+const errorHandler = require("../middlewares/errorHandler");
 
 module.exports = (app) => {
-  app.use("/", publicRoutes);
-  app.use("/user", userRoutes);
-  app.use("/property", propertyRoutes);
-  app.use("/reservation", reservationRoutes);
+  app.use("/users", userRoutes);
+  app.use("/properties", propertyRoutes);
+  app.use("/reservations", reservationRoutes);
   app.use("/comment", commentRoutes);
   app.use("/photo", photoRoutes);
+  app.use("/", publicRoutes);
+  app.use(errorHandler);
 };

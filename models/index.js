@@ -29,6 +29,9 @@ Reservation.belongsTo(User);
 User.hasMany(Comment);
 Comment.belongsTo(User);
 
+Property.hasMany(Reservation);
+Reservation.belongsTo(Property);
+
 Property.hasMany(Photo);
 Photo.belongsTo(Property);
 
