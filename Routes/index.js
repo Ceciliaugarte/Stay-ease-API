@@ -11,7 +11,7 @@ module.exports = (app) => {
   app.use("/properties", propertyRoutes);
   app.use("/reservations", reservationRoutes);
   app.use("/comments", commentRoutes);
-  app.use("/photo", photoRoutes);
+  app.use("/photos", photoRoutes);
   app.use("/", publicRoutes);
   app.use(errorHandler);
 };
