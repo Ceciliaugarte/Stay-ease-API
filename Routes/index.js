@@ -1,4 +1,4 @@
-const publicRoutes = require("./publicRoutes");
+const authRoutes = require("./authRoutes");
 const userRoutes = require("./userRoutes");
 const propertyRoutes = require("./propertyRoutes");
 const reservationRoutes = require("./reservationRoutes");
@@ -12,6 +12,6 @@ module.exports = (app) => {
   app.use("/reservations", reservationRoutes);
   app.use("/comments", commentRoutes);
   app.use("/photos", photoRoutes);
-  app.use("/", publicRoutes);
+  app.use("/tokens", authRoutes);
   app.use(errorHandler);
 };
