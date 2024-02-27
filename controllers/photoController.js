@@ -1,4 +1,5 @@
 const { Photo, Property } = require("../models");
+const formidable = require("formidable");
 
 async function index(req, res) {
   const photos = await Photo.findAll({ include: Property });
@@ -12,12 +13,25 @@ async function show(req, res) {
 }
 
 async function store(req, res) {
-  const { url, propertyId } = req.body;
-  const newPhoto = await Photo.create({
-    url,
-    propertyId,
+  const form = formidable({
+    multiples: true,
+    uploadDir: __dirname + "/../public/img",
+    keepExtensions: true,
   });
-  return res.json(newPhoto);
+
+  form.parse(req, async (err, fields, files) => {
+    try {
+      console.log(fields);
+      console.log(files);
+      const newPhoto = await Photo.create({
+        propertyId: fields.propertyId,
+        url: files.url.newFilename,
+      });
+      return res.json(newPhoto);
+    } catch {
+      console.log(err);
+    }
+  });
 }
 
 async function update(req, res) {
