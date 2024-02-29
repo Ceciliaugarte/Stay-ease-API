@@ -25,6 +25,10 @@ class User extends Model {
           type: DataTypes.ENUM("guest", "host", "administrator"),
           defaultValue: "guest",
         },
+        avatar: {
+          type: DataTypes.STRING,
+          defaultValue: "avatarDefault.png",
+        },
       },
       {
         sequelize,
