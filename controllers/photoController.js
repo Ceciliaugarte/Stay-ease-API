@@ -21,8 +21,6 @@ async function store(req, res) {
 
   form.parse(req, async (err, fields, files) => {
     try {
-      console.log(fields);
-      console.log(files);
       const newPhoto = await Photo.create({
         propertyId: fields.propertyId,
         url: files.url.newFilename,

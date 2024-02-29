@@ -1,5 +1,6 @@
 const { User } = require("../models");
 const bcrypt = require("bcryptjs");
+const formidable = require("formidable");
 
 async function index(req, res) {
   const users = await User.findAll();
@@ -27,17 +28,29 @@ async function store(req, res) {
 
 async function update(req, res) {
   const userId = req.params.id;
-  const { firstname, lastname, email, role } = req.body;
-  await User.update(
-    {
-      firstname,
-      lastname,
-      email,
-      role,
-    },
-    { where: { id: userId } },
-  );
-  return res.json("User has been updated");
+  const form = formidable({
+    multiples: true,
+    uploadDir: __dirname + "/../public/img",
+    keepExtensions: true,
+  });
+  form.parse(req, async (err, fields, files) => {
+    try {
+      const { firstname, lastname, email, role } = fields;
+      await User.update(
+        {
+          firstname,
+          lastname,
+          email,
+          role,
+          avatar: files.avatar.newFilename,
+        },
+        { where: { id: userId } },
+      );
+      return res.json("User has been updated");
+    } catch (error) {
+      console.log(error);
+    }
+  });
 }
 
 async function destroy(req, res) {
